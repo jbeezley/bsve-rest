@@ -4,7 +4,10 @@
   "description": "Tools for working with BSVE's REST API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --cache .",
+    "test": "karma start karma.conf.js",
+    "ci": "karma start karma.conf.js --single-run --browsers PhantomJS",
+    "codecov": "cat coverage/*/lcov.info | codecov"
   },
   "repository": {
     "type": "git",
@@ -32,14 +35,9 @@
     "karma-coverage": "^0.5.3",
     "karma-jasmine": "^0.3.7",
     "karma-phantomjs-launcher": "^1.0.0",
+    "karma-threshold-reporter": "^0.1.15",
     "karma-webpack": "^1.7.0",
     "phantomjs-prebuilt": "^2.1.4",
     "webpack": "^1.12.13"
-  },
-  "scripts": {
-    "lint": "eslint --cache .",
-    "test": "karma start karma.conf.js",
-    "ci": "karma start karma.conf.js --single-run --browsers PhantomJS",
-    "codecov": "cat coverage/*/lcov.info | codecov"
   }
 }

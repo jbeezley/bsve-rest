@@ -12,7 +12,13 @@ module.exports = function (config) {
                 {type: 'text'}
             ]
         },
-        reporters: ['progress', 'coverage'],
+        thresholdReporter: {
+            statements: 100,
+            branches: 100,
+            functions: 100,
+            lines: 100
+        },
+        reporters: ['progress', 'coverage', 'threshold'],
         frameworks: ['jasmine'],
         files: [
             'test/*.js'
