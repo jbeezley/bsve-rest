@@ -87,3 +87,4 @@ tramp
 # server auth directory
 /server/
 
+/dist/

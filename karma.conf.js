@@ -1,4 +1,4 @@
-var path = require('path');
+var webpack_config = require('./webpack.config');
 function browser(b) {
     return b.toLowerCase().split(/[ /-]/)[0];
 }
@@ -33,10 +33,11 @@ module.exports = function (config) {
                 preLoaders: [
                     {
                         test: /\.js$/,
-                        include: path.resolve('js/'),
+                        exclude: /(test|node_modules)/,
                         loader: 'istanbul-instrumenter'
                     }
-                ]
+                ],
+                loaders: webpack_config.module.loaders
             }
         }
     });
