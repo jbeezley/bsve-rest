@@ -1,14 +1,18 @@
 language: node_js
-sudo: False
+sudo: false
 node_js:
-    - "0.12"
+- '0.12'
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 script:
-    - npm install
-    - npm run ci
-
+- npm install
+- npm run ci
 after_success:
-  - npm run codecov
+- npm run codecov
+- npm run build
+- ./deploy.sh
+env:
+  global:
+    GH_REF: github.com/jbeezley/bsve-rest.git
+    secure: jvS2VDSw2Kozl+gZAZOW+Ptsizy5CtUNBbXjQg+VCIm7Bk6lDfAdcldzzwjkRPA56wFHLWmsUe8QGhnQmsXD54xR7B+vJlbTrerNWNGP/SAVzIJzvzJI79UelBACj31QGZBZkWj/9DZ/vwZEGb+wULJfJ8d0Dt54jOTBRoKGkTxJpl/o+vzDOV4UYqttJWw7Dbgd5mnw4/Bz2rmC+xfPbj0Mj4yDxvMTfHEXMOTPfVM9/i1BAK0vwYck1lc5bjLpmrBUeptJu2nbVl++WusRg6p45ImdVAD/Oqq17zE63IcppLghzdP4MArrpMBVXA2pfGFmqBu6SdwD4QZCmE787nSXbfbn43EBeE47BWkqPXLs74ObASgRb3mNzeSpJW8LG/h52aG58HgyBu0uicWEnAtaDyUblLYt3SjF7xswhee0fz0pFN4aytYtfGR3J2IvlqWh765EWans9qfmITsvVbRoJ3fHCj2wCEzUwVRGp/wadFSNsOfpVFPdfy6xbfc5iYScMi+XLPTvbWGC09nuhOQ7XpdrwPuqDWiV2gARSNVQe4eeymglwvrXPZXpHxicM+KzjiWlpcSoxqGjlzJL7MMhTVTo/0yJgmJUeNSS5GyN0w+Ra9xp95PcDAHG6doSUG4ToeobtkVWYnQvVTni4r6rkR9ZHprLSnh2rpljEm8=
