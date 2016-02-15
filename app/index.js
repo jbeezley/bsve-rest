@@ -18,6 +18,7 @@ function generate() {
 }
 $(function () {
     $('<div class="b-app-content"/>').html(require('./body.jade')).appendTo('body');
+    $('[data-toggle="tooltip"]').tooltip();
     $('.b-app-generate-auth .form-group input').change(generate);
     new Clipboard('.b-app-copy-button'); // eslint-disable-line no-new
 });
