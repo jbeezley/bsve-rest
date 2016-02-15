@@ -1,0 +1,20 @@
+a.navbar-brand {
+    padding: 5px;
+}
+
+a.b-app-ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    z-index: 1001;
+}
+
+#b-app-auth-header {
+    font-family: monospace;
+    overflow: scroll;
+}
+
+.page-header a {
+   cursor: pointer;
+}

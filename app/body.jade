@@ -4,21 +4,42 @@
 - require('bootstrap/js/collapse.js');
 - require('bootstrap/js/tab.js');
 
+a.b-app-ribbon(href="https://github.com/jbeezley/bsve-rest")
+    img(src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png")
+
 nav.navbar.navbar-default.navbar-top
     .container
         .navbar-header
-            a.navbar-brand(href="#") BSVE
-            ul.nav.navbar-nav
-                li: a(href="#").buttons.button-home Home
-                li: a(href="#").buttons.button-test1 Test1
+            a.navbar-brand(href="http://www.bsvecosystem.net/")
+                img.b-app-logo.pull-left(alt="BSVE" src="http://www.bsvecosystem.net/workbench/assets/img/BSVE%20Logo-3.png" height="40px")
 
 .container
     .row
-        .col-md-8
+        .col-md-12
             .page-header
                 h1
-                    | REST API utilities
-        .col-md-4
-            .page-header
-                h1
-                    | Test area
+                    | Generate authentication headers for the 
+                    a(src="http://developer.bsvecosystem.net/wp/tutorials/api-documentation/") BSVE API
+                    | .
+            form.b-app-generate-auth
+                .form-group
+                    label(for="b-app-user") User name
+                    input#b-app-user.form-control(type="email" name="email" aria-described-by="b-app-user-help")
+                    span#b-app-user-help.help-block The email addressed associated with your BSVE account.
+                .form-group
+                    label(for="b-app-apikey") API Key
+                    input#b-app-apikey.form-control(type="text" name="apikey")
+                .form-group
+                    label(for="b-app-secretkey") Secret Key
+                    input#b-app-secretkey.form-control(type="text" name="secretkey" aria-described-by="b-app-api-help")
+                    span#b-app-api-help.help-block
+                        | The API and Secret keys can be found under "Manage API credentials" on your 
+                        a(href="http://developer.bsvecosystem.net/#/account") developer account page
+                        | .
+                .form-group
+                    label(for="b-app-auth-header") Authentication header
+                    .input-group
+                        input#b-app-auth-header.form-control.disabled(type="text" placeholder="Fill in the fields above.")
+                        span.input-group-btn
+                            button.btn.btn-default.b-app-copy-button(type="button" data-clipboard-target="#b-app-auth-header")
+                                | Copy
